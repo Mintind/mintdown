@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Mintdown",
+  "mainBinaryName": "Mintdown",
+  "version": "0.4.2",
+  "identifier": "com.markdowneditor.kit",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "icon": [
+      "icons/icon.ico",
+      "icons/icon.png"
+    ],
+    "shortDescription": "Offline Markdown editor",
+    "fileAssociations": [
+      {
+        "ext": [
+          "md"
+        ],
+        "name": "Mintdown.Markdown",
+        "description": "Markdown document",
+        "role": "Editor",
+        "mimeType": "text/markdown"
+      }
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": [
+          "SimpChinese",
+          "English"
+        ],
+        "displayLanguageSelector": false,
+        "installerHooks": "installer/file-associations.nsh"
+      }
+    },
+    "resources": {
+      "../third-party/THIRD_PARTY_NOTICES.txt": "third-party/THIRD_PARTY_NOTICES.txt",
+      "../third-party/COMPONENTS.json": "third-party/COMPONENTS.json",
+      "../third-party/RUST-LIBRARY-COPYRIGHT.html": "third-party/RUST-LIBRARY-COPYRIGHT.html",
+      "../third-party/sources/cssparser-0.37.0.crate": "third-party/sources/cssparser-0.37.0.crate",
+      "../third-party/sources/cssparser-macros-0.7.1.crate": "third-party/sources/cssparser-macros-0.7.1.crate",
+      "../third-party/sources/dtoa-short-0.3.5.crate": "third-party/sources/dtoa-short-0.3.5.crate",
+      "../third-party/sources/option-ext-0.2.0.crate": "third-party/sources/option-ext-0.2.0.crate",
+      "../third-party/sources/selectors-0.38.0.crate": "third-party/sources/selectors-0.38.0.crate"
+    }
+  }
+}

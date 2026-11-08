@@ -1,0 +1,7 @@
+{
+  "identifier": "com.markdowneditor.kit.installertest",
+  "productName": "Mintdown Installer Test",
+  "bundle": {
+    "fileAssociations": [{ "ext": ["mintdown-d2-test"], "name": "MintdownInstallerTest.Markdown", "description": "Mintdown isolated installation test", "role": "Editor" }]
+  }
+}

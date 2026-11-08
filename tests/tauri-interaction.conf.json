@@ -1,0 +1,4 @@
+{
+  "identifier": "com.markdowneditor.kit.interaction",
+  "build": { "beforeDevCommand": "" }
+}

@@ -1,0 +1,6 @@
+{
+  "identifier": "com.markdowneditor.kit.nativeinteractiontest",
+  "productName": "Mintdown Native Interaction Test",
+  "mainBinaryName": "markdown-editor-kit",
+  "bundle": { "active": false }
+}

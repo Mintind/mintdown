@@ -1,0 +1,27 @@
+/* Mintdown-owned theme colors. Typography tokens live in typography.css. */
+:root {
+  --page: #f8faf8; --surface: #f0f5f2; --text: #34413f; --heading: #223431; --heading-inline: var(--heading); --heading-secondary: #223431; --heading-tertiary: #223431; --muted: #63746f;
+  --border: #dce8e1; --accent: #187968; --accent-soft: #dbeee6; --outline-active: var(--accent-soft); --outline-hover: #eaf1ed; --editor-caret: var(--text);
+  --link: #257b6a; --link-hover: #176b5a; --link-visited: #496d78; --spelling: #ba625c;
+  --selection: #cbded7; --selection-inactive: #dfeae5; --code: #edf4ef; --quote: #637c70; --quote-border: var(--border); --table-head: #f0f5f2; --table-body: transparent; --table-head-text: var(--text); --table-border: var(--border);
+  --frontmatter-background: #eaf3ed; --frontmatter-key: #586862; --frontmatter-syntax: #7b8a84;
+  --syntax-keyword: #8250df; --syntax-string: #0a7b32; --syntax-comment: #6e7781;
+  --syntax-number: #b35c16; --syntax-function: #0550ae; --syntax-type: #953800;
+  --error-bg: #ae34261a; --error-text: #a63129;
+  --shadow-soft: #0002; --shadow-strong: #0003; --dialog-backdrop: #0007;
+  --button-primary-bg: #d4ece4; --button-primary-text: #125b4e; --button-primary-border: #a4cec1;
+  --button-primary-hover: #c4e3d8; --button-primary-active: #b6d9cc;
+}
+:root[data-theme="dark"] {
+  --page: #24283b; --surface: #1f2335; --text: #c0caf5; --heading: #ced7e6; --heading-secondary: #ced7e6; --heading-tertiary: #ced7e6; --muted: #a9b1c6;
+  --border: #414868; --accent: #7aa2f7; --accent-soft: #303e60; --outline-active: #364568; --outline-hover: #30384d; --editor-caret: var(--accent);
+  --link: #89b4fa; --link-hover: #a9c9ff; --link-visited: #a9b8e7; --spelling: #d5a3a0;
+  --selection: #354d73; --selection-inactive: #354d73; --code: #292e42; --quote: #aebbd0; --quote-border: #53617e; --table-head: #343d54; --table-body: #292f43; --table-head-text: #d7e0ea; --table-border: var(--border);
+  --frontmatter-background: #292d3e; --frontmatter-key: #b5c0d5; --frontmatter-syntax: #929db7;
+  --syntax-keyword: #bcb2d2; --syntax-string: #aac9b6; --syntax-comment: #97a7bb;
+  --syntax-number: #c6bba9; --syntax-function: #a8c8d6; --syntax-type: #b7bfd9;
+  --error-bg: #ae34261a; --error-text: #f0a49e;
+  --shadow-soft: #0002; --shadow-strong: #0003; --dialog-backdrop: #0007;
+  --button-primary-bg: #394c74; --button-primary-text: #e3ebf7; --button-primary-border: #60749d;
+  --button-primary-hover: #455b87; --button-primary-active: #324264;
+}

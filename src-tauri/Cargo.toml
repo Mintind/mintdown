@@ -1,0 +1,32 @@
+[package]
+name = "markdown-editor-kit"
+version = "0.4.2"
+edition = "2021"
+
+[lib]
+name = "markdown_editor_kit_lib"
+crate-type = ["rlib"]
+
+[features]
+# Explicit opt-in only for an isolated installer verification binary.
+native-test = []
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+base64 = "0.21"
+urlencoding = "2"
+tokio = { version = "1", features = ["time", "sync"] }
+windows-sys = { version = "0.61", features = ["Win32_Foundation", "Win32_Storage_FileSystem", "Win32_UI_WindowsAndMessaging"] }
+
+[target.'cfg(windows)'.dependencies]
+webview2-com = "0.39"
+windows-core = "0.62"

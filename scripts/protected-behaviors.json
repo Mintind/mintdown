@@ -1,0 +1,169 @@
+[
+  {
+    "id": "UI",
+    "label": "大纲、菜单、标签与布局",
+    "paths": [
+      "src/style.css",
+      "src/styles/**",
+      "src/ui/EditorChrome.tsx",
+      "src/ui/preferences.ts",
+      "src/native/DesktopApp.tsx"
+    ],
+    "shared": true,
+    "visual": true,
+    "unitTests": [
+      "tests/outline-style.test.ts",
+      "tests/ui-density.test.ts",
+      "tests/stage-b2-1.test.tsx",
+      "tests/theme-safety.test.tsx"
+    ],
+    "manualChecks": [
+      "按任务范围复核相关 Computed Styles、布局和键盘焦点；截图不是交互验收的替代。"
+    ]
+  },
+  {
+    "id": "EDIT",
+    "label": "局部源码、代码围栏、空行与光标",
+    "paths": [
+      "src/editor/**",
+      "src/ui/editorCommands.ts",
+      "src/document/**"
+    ],
+    "unitTests": [
+      "tests/stage-b2-3-prototype.test.ts",
+      "tests/b2-3-interaction.test.ts",
+      "tests/blankline-regression.test.ts",
+      "tests/mode-roundtrip.test.ts"
+    ],
+    "manualChecks": [
+      "根据受影响语法运行 native-b2-3 / native-heading-boundary-theme；实体中文 IME 仍需人工确认。"
+    ]
+  },
+  {
+    "id": "TABLE",
+    "label": "表格直接编辑",
+    "paths": [
+      "src/editor/*table*",
+      "src/editor/*Table*"
+    ],
+    "unitTests": [
+      "tests/b2-3-interaction.test.ts"
+    ],
+    "manualChecks": [
+      "涉及表格时执行 native-long-table / native-table-keyboard：新增行实际输入、拖选、Space/Tab 和保存重开。"
+    ]
+  },
+  {
+    "id": "FM",
+    "label": "Front Matter 与原文保护",
+    "paths": [
+      "src/editor/*front*",
+      "src/editor/*Front*",
+      "src/editor/localPreview.ts",
+      "src/document/**"
+    ],
+    "unitTests": [
+      "tests/c1-preflight.test.ts",
+      "tests/stage-a.test.ts",
+      "tests/blankline-regression.test.ts"
+    ],
+    "manualChecks": [
+      "涉及 YAML 呈现/编辑时复核完整原文可见、卡片内边距及 BOM/CRLF 字节；不序列化重排 YAML。"
+    ]
+  },
+  {
+    "id": "IMAGE",
+    "label": "图片归档与迁移一致性",
+    "paths": [
+      "src/assets/**",
+      "src-tauri/src/images.rs",
+      "src-tauri/src/*image*",
+      "src-tauri/src/*asset*",
+      "src/native/fileBridge.ts"
+    ],
+    "unitTests": [
+      "tests/image-assets.test.ts"
+    ],
+    "manualChecks": [
+      "运行对应 Rust 文件测试及 native-image-assets；比较源文件、内存正文、目标磁盘正文与重开结果，Ctrl+Z 不代表磁盘逆操作。"
+    ]
+  },
+  {
+    "id": "SESSION",
+    "label": "标签、保存与恢复",
+    "paths": [
+      "src/native/DesktopApp.tsx",
+      "src/native/sessionBridge.ts",
+      "src-tauri/src/lib.rs",
+      "src-tauri/src/file_io.rs",
+      "src-tauri/src/session_store.rs"
+    ],
+    "shared": true,
+    "unitTests": [
+      "tests/session-state.test.ts",
+      "tests/stage-b1-frontend.test.tsx"
+    ],
+    "manualChecks": [
+      "根据变更运行 native-tabs / native-session-restore / native-close-flow 及 Rust 文件安全测试；不接触正式数据。"
+    ]
+  },
+  {
+    "id": "PDF",
+    "label": "独立导出及 PDF 书签",
+    "paths": [
+      "src/export/**",
+      "src/styles/export-document.css",
+      "src-tauri/src/export.rs"
+    ],
+    "unitTests": [
+      "tests/export-document.test.ts"
+    ],
+    "manualChecks": [
+      "运行 native-export、check-pdf-outline.py，并实际渲染 PDF；只检查文件头或 HTML 锚点不算书签通过。"
+    ]
+  },
+  {
+    "id": "GATE",
+    "label": "保护机制自身",
+    "paths": [
+      "scripts/change-guard*",
+      "scripts/protected-behaviors.json",
+      "scripts/verify-change.mjs",
+      "tests/protection/**",
+      "tests/native-ui-guard.mjs",
+      "tests/baselines/**",
+      "tests/fixtures/ui-guard*"
+    ],
+    "visual": true,
+    "unitTests": [
+      "tests/change-guard.test.ts",
+      "tests/ui-contract.test.ts"
+    ],
+    "manualChecks": [
+      "基线预期变化必须对应用户明确需求；范围报告不能证明需求授权。"
+    ]
+  },
+  {
+    "id": "DIST",
+    "label": "发行身份、安装配置与第三方资源",
+    "paths": [
+      "package.json",
+      "package-lock.json",
+      "src-tauri/Cargo.toml",
+      "src-tauri/Cargo.lock",
+      "src-tauri/tauri.conf.json",
+      "third-party/**",
+      "scripts/generate-third-party-notices.mjs",
+      "scripts/audit-public-release.mjs",
+      "scripts/build-info.mjs"
+    ],
+    "shared": true,
+    "unitTests": [
+      "tests/installer-config.test.ts",
+      "tests/release-package.test.ts"
+    ],
+    "manualChecks": [
+      "不执行安装/卸载或写关联；只审计NSIS清单、稳定身份、明确资源白名单、许可证与发布目录隔离。"
+    ]
+  }
+]

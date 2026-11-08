@@ -2,42 +2,51 @@
 
 简洁、离线运行的 Windows Markdown 桌面编辑器。
 
-**[下载 Mintdown v0.4.1 预览版](https://github.com/Mintind/mintdown/releases/tag/v0.4.1)** · Windows x64 · NSIS 安装程序
+## 主要功能
 
-## 功能
+- 可视编辑与完整源码模式，支持光标驱动的局部 Markdown 源码编辑。
+- 多标签、大纲导航、查找替换、会话恢复与未保存内容恢复快照。
+- GFM 表格、代码高亮、数学公式和可直接编辑的 YAML Front Matter。
+- 本地图片归档、缺失图片重新定位、文档与图片资源联动。
+- 独立 HTML / PDF 导出，PDF 支持标题书签。
+- Mint Light / Tokyo Night 主题及标准 / 紧凑界面密度。
 
-- 所见即所得与完整源码模式，光标进入格式时可编辑局部 Markdown 源码。
-- 多标签文档、大纲导航、查找替换、会话恢复与独立恢复快照。
-- GFM 表格、代码高亮、数学公式、直接编辑的 YAML Front Matter。
-- 本地图片插入归档、缺失图片重新定位、文档与资源联动。
-- 独立 HTML 与可选择文字的 PDF 导出，PDF 包含标题书签。
-- Mint Light / Tokyo Night 两套主题，以及标准 / 紧凑界面密度。
+## Windows 安装
 
-## 截图
+1. 前往 [GitHub Releases](https://github.com/Mintind/mintdown/releases)，下载所需版本的 `Mintdown_<version>_x64-setup.exe` 和 `SHA256SUMS.txt`。
+2. 使用 PowerShell 的 `Get-FileHash .\Mintdown_<version>_x64-setup.exe -Algorithm SHA256` 核对校验值。
+3. 运行安装向导，选择安装目录，然后从开始菜单启动 Mintdown。
 
-以下使用合成示例文档，不包含个人文章。
+支持 Windows 10 / 11 x64，需要 Microsoft Edge WebView2 运行时。安装包包含运行时引导程序，系统缺少 WebView2 时可能需要联网下载。安装后无需 Node.js、Rust 或其他开发工具。
 
-![Mint Light](screenshots/mint-light.png)
+当前安装包**未签名**，Windows 可能显示“发布者未知”提示，请核对下载来源和校验值。
 
-![Tokyo Night](screenshots/tokyo-night.png)
+## 基本使用
 
-## 安装与使用
+- `Ctrl+O` 打开，`Ctrl+S` 保存，`Ctrl+Shift+S` 另存为。
+- `Ctrl+/` 切换可视 / 源码模式，`Ctrl+F` 查找，`Ctrl+H` 替换。
+- `Ctrl+Tab` 切换文档，`Ctrl+W` 关闭当前标签，`Ctrl+,` 打开偏好设置。
+- 标签右键菜单提供另存为、重命名或移动、图片重新定位和导出等操作。
 
-1. 从版本页面下载 `Mintdown_0.4.1_x64-setup.exe` 和 `SHA256SUMS.txt`。
-2. 在 PowerShell 中运行 `Get-FileHash .\Mintdown_0.4.1_x64-setup.exe -Algorithm SHA256`，与清单核对。
-3. 运行安装向导，选择当前用户的安装目录。安装后的应用不需要 Node.js、Rust 或开发工具。
-4. 通过开始菜单启动 Mintdown，打开 Markdown 文件。`.md` 默认编辑器由用户在 Windows 中自行选择，安装器不强行接管。
+## 从源码构建
 
-需要 Microsoft Edge WebView2 运行时；安装程序包含微软引导程序，系统缺少运行时时可能需要联网下载。日常编辑不需要本地开发服务器或账户。
+准备 Git、Node.js 22.12+（含 npm）、Rust stable MSVC、Visual Studio 2022 C++ Build Tools（含 Windows SDK）及 WebView2。
 
-## 预览版状态
+```powershell
+git clone https://github.com/Mintind/mintdown.git
+cd mintdown
+npm.cmd ci
+npm.cmd run desktop
+```
 
-本版本**未进行代码签名**，Windows 可能显示发布者未知提示；请先核对下载来源和 SHA-256。隔离 Windows 用户下的完整安装、升级、卸载、缺少 WebView2 时的首次安装及 Explorer 连续双击等安装验收尚未全部完成。请备份重要文档后试用。实际构建和测试范围见[版本说明](releases/v0.4.1.md)。
+构建 Windows x64 安装包：
 
-## 本仓库的范围
+```powershell
+npm.cmd run build:windows
+```
 
-本仓库仅用于发布指定版本的安装程序、说明、截图及必要第三方合规材料，**不包含 Mintdown 的应用开发源码或开发历史，不是 Mintdown 源码开源仓库**。GitHub 自动生成的 Source code 归档也仅包含这些公开资料。
+安装包位于 `artifacts/windows/<version>/`。更多命令见 [构建与测试](docs/BUILDING.md)。
 
-第三方版权与许可见 [THIRD_PARTY_NOTICES.txt](third-party/THIRD_PARTY_NOTICES.txt) 和 [COMPONENTS.json](third-party/COMPONENTS.json)。`third-party/sources/` 仅含许可证要求提供的、未修改的 MPL-2.0 第三方组件原始源码包，不含 Mintdown 应用源码。这些组件继续遵循各自许可证。
+## 许可与版权
 
-后续版本仅在维护者明确决定发布时更新，不随本地日常开发提交自动发布。
+Mintdown 自身源码的许可证尚未指定；公开源码不代表授予开源许可。第三方组件遵循各自许可，见 [版权说明](COPYRIGHT.md) 和 [第三方声明](third-party/THIRD_PARTY_NOTICES.txt)。

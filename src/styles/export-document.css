@@ -1,0 +1,32 @@
+@page { size: A4 portrait; margin: 18mm; }
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html { background: #fff; color: #25322f; font-family: "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif; }
+body { max-width: 860px; margin: 0 auto; padding: 38px 42px 72px; font-size: 15px; line-height: 1.75; overflow-wrap: anywhere; }
+h1, h2, h3, h4, h5, h6 { color: #172823; line-height: 1.35; break-after: avoid-page; margin: 1.25em 0 .45em; }
+h1 { font-size: 1.85em; } h2 { font-size: 1.55em; } h3 { font-size: 1.3em; }
+h4 { font-size: 1.13em; } h5, h6 { font-size: 1em; }
+p, ul, ol, blockquote, pre, table, figure { margin: .65em 0 1em; }
+ul, ol { padding-left: 1.7em; } li { padding-left: .1em; } li > p { margin: .15em 0; }
+li input[type="checkbox"] { margin-right: .45em; accent-color: #257b6a; }
+a { color: #176d78; text-decoration: underline; text-underline-offset: 2px; }
+blockquote { padding: .2em 1em; border-left: 3px solid #b9cbc4; color: #53645e; }
+hr { border: 0; border-top: 1px solid #cbd7d1; margin: 1.5em 0; }
+code, pre { font-family: Consolas, "Cascadia Code", monospace; }
+:not(pre) > code { padding: .1em .25em; border-radius: 3px; background: #edf3ef; font-size: .9em; }
+pre { padding: .85em 1em; border: 1px solid #dce5df; border-radius: 5px; background: #f5f8f6; font-size: .86em; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; break-inside: avoid-page; }
+pre code { white-space: inherit; }
+table { width: 100%; border-collapse: collapse; font-size: .92em; }
+th, td { border: 1px solid #cbd8d1; padding: .42em .65em; vertical-align: top; }
+th { background: #eef4f0; font-weight: 650; }
+tr { break-inside: avoid-page; } thead { display: table-header-group; }
+img { display: block; max-width: 100%; height: auto; margin: .8em 0; break-inside: avoid-page; }
+.missing-image { display: inline-block; padding: .3em .6em; border: 1px solid #d7dfda; border-radius: 4px; background: #f4f6f4; color: #56635c; }
+.katex-display { display: block; text-align: center; margin: 1em 0; overflow-wrap: normal; break-inside: avoid-page; }
+@media print {
+  html { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  body { max-width: none; padding: 0; font-size: 11pt; }
+  p { break-inside: avoid-page; }
+  pre, blockquote, img, .katex-display { break-inside: avoid-page; }
+  a { color: #176d78; }
+}

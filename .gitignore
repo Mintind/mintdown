@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.npm-cache/
+coverage/
+*.tsbuildinfo
+src-tauri/target/
+src-tauri/gen/
+artifacts/
+.cargo-home/
+tests/.native-smoke-*/
+tests/.layout-evidence/
