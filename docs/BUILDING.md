@@ -12,7 +12,7 @@
 ```powershell
 git clone https://github.com/Mintind/mintdown.git
 cd mintdown
-# 如需构建指定版本：git checkout v0.4.2
+# 如需构建指定版本：git checkout v0.4.1
 npm.cmd ci
 npm.cmd run desktop
 ```

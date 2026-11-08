@@ -1,7 +1,7 @@
 {
   "name": "markdown-editor-kit",
   "private": true,
-  "version": "0.4.2",
+  "version": "0.4.1",
   "type": "module",
   "scripts": {
     "desktop": "powershell -NoProfile -File ./scripts/start-editor.ps1",
