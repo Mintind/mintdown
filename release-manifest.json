@@ -1,0 +1,31 @@
+{
+  "product": "Mintdown",
+  "version": "0.4.1",
+  "platform": "Windows x64",
+  "installer": {
+    "name": "Mintdown_0.4.1_x64-setup.exe",
+    "bytes": 6666474,
+    "sha256": "d6b7b589615322c57e83444e7e04e8b7ed3ce89d015a4d4a4cedf4623d4e2865"
+  },
+  "signing": "NotSigned",
+  "developmentCommit": "78c6d9172296ea0552619861837b1732ab320d46",
+  "cleanDevelopmentSource": true,
+  "sourceSha256": "aa712c0f71c54d416d9fdf5c097642ed5b7b6b4debc74d530b20f158830d3180",
+  "buildId": "0.4.1+78c6d91.aa712c0f71c5.production",
+  "frontendBuiltAt": "2026-11-08T11:14:46.579Z",
+  "packagedAt": "2026-11-08T11:18:45.053Z",
+  "validation": {
+    "frontendTests": 166,
+    "rustTests": 22,
+    "scopedGateTests": 39,
+    "nativeVisualThemeDensityCombinations": 4,
+    "nsisPayloadWhitelist": true,
+    "installerExecuted": false
+  },
+  "knownUnverified": [
+    "Isolated-user install/upgrade/uninstall acceptance",
+    "First install without WebView2",
+    "Physical Explorer double-click acceptance"
+  ],
+  "distribution": "Binary releases and public materials only; Mintdown application source is not included."
+}
